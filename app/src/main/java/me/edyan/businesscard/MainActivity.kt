@@ -19,12 +19,12 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color(255, 231, 231)
                 ) {
                     BusinessCardLayout()
                 }
@@ -104,7 +104,8 @@ fun PersonalInformation(image: Painter, name: String, title: String, modifier: M
         Text(
             text = title,
             fontWeight = FontWeight.Bold,
-            fontSize = 24.sp
+            fontSize = 24.sp,
+            color = Color(138, 64, 65)
         )
     }
 }
@@ -120,7 +121,8 @@ fun ContactInformation(phone: String, social: String, email: String, modifier: M
             Icon(
                 Icons.Default.Call,
                 contentDescription = "Phone Number: ",
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(24.dp),
+                tint = Color(138, 64, 65)
             )
             Text(
                 text = phone,
@@ -136,7 +138,8 @@ fun ContactInformation(phone: String, social: String, email: String, modifier: M
             Icon(
                 Icons.Default.AccountCircle,
                 contentDescription = "Social Username: ",
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(24.dp),
+                tint = Color(138, 64, 65)
             )
             Text(
                 text = social,
@@ -152,7 +155,8 @@ fun ContactInformation(phone: String, social: String, email: String, modifier: M
             Icon(
                 Icons.Default.Email,
                 contentDescription = "Email Address: ",
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(24.dp),
+                tint = Color(138, 64, 65)
             )
             Text(
                 text = email,
@@ -165,7 +169,7 @@ fun ContactInformation(phone: String, social: String, email: String, modifier: M
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun BusinessCardPreview() {
     BusinessCardTheme {
         BusinessCardLayout()
     }
